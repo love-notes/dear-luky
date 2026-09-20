@@ -594,8 +594,15 @@
   <!-- PAGE 3 — Q1 multiple choice -->
   <section class="page" data-page="3">
     <div class="cork-panel">
-      <p class="eyebrow">question 1 · multiple choice</p>
-      <h2 class="headline" style="font-size:clamp(20px,4vw,28px);">coto makassar terbuat dari?</h2>
+      <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap; justify-content:center;">
+        <div class="polaroid rotR" style="width:clamp(120px,30vw,170px);">
+          <img src="photo2.jpg" alt="Flowers">
+        </div>
+        <div style="max-width:320px;">
+          <p class="eyebrow">question 1 · multiple choice</p>
+          <h2 class="headline" style="font-size:clamp(19px,3.8vw,26px); text-align:left;">coto makassar terbuat dari?</h2>
+        </div>
+      </div>
       <div class="options" id="q1options"></div>
       <p class="feedback" id="q1feedback"></p>
       <div class="btn-row"><button class="btn-primary" id="q1next" disabled>next</button></div>
@@ -630,15 +637,8 @@
   <!-- PAGE 6 — Q4 multiple choice with photo -->
   <section class="page" data-page="6">
     <div class="cork-panel">
-      <div style="display:flex; gap:18px; align-items:center; flex-wrap:wrap; justify-content:center;">
-        <div class="polaroid rotR" style="width:clamp(120px,30vw,170px);">
-          <img src="photo2.jpg" alt="Flowers">
-        </div>
-        <div style="max-width:320px;">
-          <p class="eyebrow">question 4 · multiple choice</p>
-          <h2 class="headline" style="font-size:clamp(19px,3.8vw,26px); text-align:left;">apa zodiak kak luky & gadis</h2>
-        </div>
-      </div>
+      <p class="eyebrow">question 4 · multiple choice</p>
+      <h2 class="headline" style="font-size:clamp(20px,4vw,28px);">apa zodiak kak luky & gadis</h2>
       <div class="options" id="q4options"></div>
       <p class="feedback" id="q4feedback"></p>
       <div class="btn-row"><button class="btn-primary" id="q4next" disabled>see my score</button></div>
@@ -687,7 +687,7 @@
    - LETTER_TEXT: the final letter, edit freely
    - Images expected in the SAME folder as this html file:
        na1.jpg  -> title page hero photo
-       na2.jpg  -> question 4 flower photo
+       na2.jpg  -> question 1 flower photo
        na3.jpg  -> champion page photo (left)
        na4.jpg  -> champion page photo (middle)
    - Music expected in the SAME folder as this html file:
@@ -821,7 +821,7 @@ function renderOptions(containerId, options, correctIndex, onCorrect, feedbackId
 /* Q1 */
 renderOptions('q1options',
   ["daging sapi","daging ayam","daging capi","daging bebek"],
-  0,
+  2,
   ()=>{ score++; },
   'q1feedback','q1next'
 );
@@ -860,7 +860,7 @@ q3next.addEventListener('click', ()=>goTo(6));
 /* Q4 */
 renderOptions('q4options',
   ["gemini & aries","gemini & aquarius","gemini & libra","gemini & gemini"],
-  2,
+  1,
   ()=>{ score++; },
   'q4feedback','q4next'
 );
